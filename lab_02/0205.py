@@ -26,4 +26,3 @@ for i in range(1, 33):
             result += c
             print(result)
             break
-
