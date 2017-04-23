@@ -176,8 +176,8 @@ class EasyWeb():
 
 def solve():
     ew = EasyWeb()
-    username = get_random_string(10)
-    password = get_random_string(10)
+    username = get_random_string(20)
+    password = get_random_string(20)
 
     print(username, password)
 
@@ -191,6 +191,8 @@ def solve():
     partial_user_secret = ew.find_partial_user_secret(27)
 
     user_secret = ew.find_user_secret(partial_user_secret, 5)
+
+    print(user_secret)
 
     t = hmac_ticket(user_secret, TICKET_FLAG)
     ew.check_ticket(t, print_info=True)
