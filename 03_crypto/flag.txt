@@ -1,0 +1,1 @@
+{"username": "student", "secret": "uw2017{crypto_homework_done}"}
