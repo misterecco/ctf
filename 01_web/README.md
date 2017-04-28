@@ -6,5 +6,5 @@ Skrypt przeznaczony jest dla pythona w wersji 3
 
 Niestandardowe biblioteki zostały umieszczone w pliku `requirements.txt`
 
-Ze względu na łatwość użycia i instalacji skrypt dekoduje kod QR przez
-zapytanie do zewnętrznego serwisu
+Ze względu na trudność instalacji odpowiedniej biblioteki skrypt dekoduje kod QR
+przez zapytanie do zewnętrznego serwisu
