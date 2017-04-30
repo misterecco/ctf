@@ -31,6 +31,7 @@ def to_hex_string(number):
 def to_int(s):
     return int(s, 16)
 
+
 class Oracle():
     sess = None
     reg = re.compile("<div class=\"alert alert-danger\" role=\"alert\">([\w\W]*?)</div>")
@@ -120,8 +121,6 @@ class Oracle():
 
         return result
 
-
-token = '4d0c549cafa4099d3843a4176068cb35b2d5f7db8234090429eb160740e0cda11d52734367f36382e2a50b11c6e37384d66eeb1171e57e18722bad03228482493ae9f3db15066636df352f13e84b488f3251423aad434cf1ba48a4b8f2a8b662'
 
 def solve():
     oracle = Oracle()
