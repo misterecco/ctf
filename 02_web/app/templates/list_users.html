@@ -1,0 +1,17 @@
+{% extends '_layout.html' %}
+{% set active_page = 'list_users' %}
+
+{% block content %}
+    <table>
+        <tr>
+            <td>Nazwa użytkownika</td>
+            <td></td>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td><a href="{{ url_for('send_message', username=user.username) }}">Wyślij wiadomość</a>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

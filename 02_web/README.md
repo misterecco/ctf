@@ -1,5 +1,11 @@
 # Zadanie 2 - web duże
 
+## Useful tools
+
+https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/
+
+https://github.com/internetwache/GitTools
+
 ## Link do zadania
 
 https://hard.web.uw2017.p4.team

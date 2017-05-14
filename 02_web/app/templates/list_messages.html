@@ -1,0 +1,21 @@
+{% extends '_layout.html' %}
+{% set active_page = 'list_messages' %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <td>Id</td>
+            <td>Temat</td>
+            <td>Od</td>
+            <td></td>
+        </tr>
+        {% for message in messages %}
+        <tr>
+            <td>{{ message.id }}</td>
+            <td>{{ message.subject }}</td>
+            <td>{{ message.sender.username }}</td>
+            <td><a name="decrypt-link" href="{{ url_for('read_message', message_id=message.id) }}">Deszyfruj</a>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

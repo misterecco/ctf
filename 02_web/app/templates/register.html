@@ -1,0 +1,21 @@
+{% extends '_layout.html' %}
+{% set active_page = 'register' %}
+
+{% block  head %}
+
+{% endblock %}
+
+{% block content %}
+    <form class="form-horizontal" method="post">
+        {% from "_helpers.html" import render_field %}
+        {{ render_field(form.username) }}
+        {{ render_field(form.password) }}
+        {{ render_field(form.repeat_password) }}
+        {{ render_field(form.public_key) }}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Załóż konto</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

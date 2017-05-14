@@ -1,0 +1,18 @@
+{% extends '_layout.html' %}
+<!--{% set active_page = 'list_users' %}-->
+{% block head %}
+    <script src="/js/decrypt.js"></script>
+    <script src="/js/kbpgp-2.0.8-min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Nadawca: <b>{{ message.sender.username }}</b></h1>
+    <h1>Temat: {{ message.subject }}</h1>
+    <h3>Wiadomość:</h3>
+    <pre id="enc-msg">{{ message.encmessage|safe }}</pre>
+    <h3>Odszyfrowana:</h3>
+    <pre id="dec-msg"></pre>
+    <input class="form-control" id="pgp-pass" placeholder="hasło do klucza">
+    <textarea class="form-control" id="privkey" placeholder="Twój prywatny klucz PGP (nigdy nie zostanie wysłany)"></textarea>
+    <button class="btn1" id="decrypt-button" onclick="decryptMessage()">Deszyfruj</button>
+{% endblock %}

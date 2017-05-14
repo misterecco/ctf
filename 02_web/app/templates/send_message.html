@@ -1,0 +1,20 @@
+{% extends '_layout.html' %}
+<!--{% set active_page = 'list_users' %}-->
+{% block head %}
+    <script src="/js/encrypt.js"></script>
+    <script src="/js/kbpgp-2.0.8-min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Odbiorca: <b>{{ recipient.username }}</b></h1>
+    <h3>Klucz publiczny odbiorcy:</h3>
+    <pre id="dest-pubkey">{{ recipient.public_key }}</pre>
+    <form action="{{ url_for('send_message', username=recipient.username) }}" id="message-form" method="POST">
+        <input type="hidden" name="encmessage" id="encMessage">
+        <input type="hidden" name="recipient" value="{{ recipient.id }}">
+        {% from "_helpers.html" import render_field %}
+        {{ render_field(form.subject) }}
+        <textarea class="form-control" id="origMessage" placeholder="Wiadomość (zostanie zaszyfrowana przed wysłaniem na serwer)" name="origmessage"></textarea>
+    </form>
+    <button class="btn1" onclick="encryptAndSend()">Wyślij</button>
+{% endblock %}
