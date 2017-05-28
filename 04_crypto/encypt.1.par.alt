@@ -1,0 +1,31 @@
+; esi = val
+
+mov    r8d,DWORD PTR [rdi]              ; r8d = mask
+mov    eax,DWORD PTR [rdi+0x10]         ; eax = key[4]
+mov    r9d,r8d                          ; r9d = mask
+not    r9d                              ; r9d = ~mask
+mov    ecx,r9d                          ; ecx = ~mask
+and    ecx,esi                          ; ecx = vanm = val & ~mask
+xor    eax,ecx                          ; eax = e1 = key[4] ^ vanm
+imul   eax,DWORD PTR [rdi+0xc]          ; eax = e2 = e1 * key[3]
+mov    edx,eax                          ; edx = e2
+mov    eax,DWORD PTR [rdi+0x8]          ; eax = key[2]
+xor    eax,ecx                          ; eax = e3 = key[2] ^ vanm
+imul   eax,DWORD PTR [rdi+0x4]          ; eax = e4 = e3 * key[1]
+add    eax,edx                          ; eax = e2 + e4
+mov    edx,DWORD PTR [rdi+0x1c]         ; edx = key[7]
+add    eax,ecx                          ; eax = e5 = e2 + e4 + vanm
+mov    ecx,DWORD PTR [rdi+0x20]         ; ecx = key[8]
+and    eax,r8d                          ; eax = e6 = (e2 + e4 + vanm) & mask
+xor    esi,eax                          ; esi = val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask)
+and    r8d,esi                          ; r8d = mask & (val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask))
+xor    edx,r8d                          ; edx = key[7] ^ (mask & (val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask)))
+imul   ecx,edx                          ; ecx = e1 = key[8] * (key[7] ^ (mask & (val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask))))
+mov    edx,DWORD PTR [rdi+0x14]         ; edx = key[5]
+xor    edx,r8d                          ; edx = key[5] ^ (mask & (val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask)))
+imul   edx,DWORD PTR [rdi+0x18]         ; edx = e2 = key[6] * (key[5] ^ (mask & (val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask))))
+add    edx,ecx                          ; edx = e1 + e2
+lea    eax,[rdx+r8*1]                   ; eax = e4 = e1 + e2 + mask & (val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask))
+and    eax,r9d                          ; eax = e4 & ~mask
+xor    eax,esi                          ; eax = (val ^ (((key[2] ^ vanm) * key[1]  +  (key[4] ^ vanm) * key[3]  +  key[7]) & mask)) ^ (e4 & ~mask)
+ret
