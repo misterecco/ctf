@@ -1,0 +1,34 @@
+; esi = val
+; rdi = key[9]
+; mask = key[0]
+
+mov    r10d,DWORD PTR [rdi]             ; r10d = mask
+mov    eax,r10d                         ; eax = mask
+and    eax,esi                          ; eax = vam = val & mask
+mov    edx,eax                          ; edx = vam
+xor    edx,DWORD PTR [rdi+0x1c]         ; edx = e1 = var ^ key[7]
+mov    ecx,edx                          ; ecx = vam
+imul   ecx,DWORD PTR [rdi+0x20]         ; ecx = e2 = vam * key[8]
+mov    edx,eax                          ; edx = mask
+xor    edx,DWORD PTR [rdi+0x14]         ; edx = e3 = mask ^ key[5]
+imul   edx,DWORD PTR [rdi+0x18]         ; edx = e4 = e3 * key[6]
+add    edx,ecx                          ; edx = e5 = e4 + e2
+add    edx,eax                          ; edx = e6 = e5 + vam
+mov    r11d,r10d                        ; r11d = mask
+not    r11d                             ; r11d = ~mask
+mov    eax,esi                          ; eax = val
+xor    eax,edx                          ; eax = e7 = val ^ e6
+and    eax,r11d                         ; eax = e8 = e7 & ~mask
+mov    r9d,eax                          ; r9d = e8
+mov    ecx,eax                          ; ecx = e8
+xor    ecx,DWORD PTR [rdi+0x10]         ; ecx = e9 = e8 ^ key[4]
+imul   ecx,DWORD PTR [rdi+0xc]          ; ecx = e10 = e9 * key[3]
+xor    eax,DWORD PTR [rdi+0x8]          ; eax = e11 = e8 ^ key[2]
+imul   eax,DWORD PTR [rdi+0x4]          ; eax = e12 = e11 * key[1]
+lea    ecx,[rcx+rax*1]                  ; ecx = e13 = e10 + e12
+lea    eax,[rcx+r9*1]                   ; eax = e14 = e13 + e8
+and    eax,r10d                         ; eax = e15 = e14 & mask
+and    edx,r11d                         ; edx = e16 = e6 & ~mask
+xor    esi,edx                          ; esi = e17 = val ^ e16
+xor    eax,esi                          ; eax = result = e15 ^ e17
+ret   
