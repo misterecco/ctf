@@ -3,14 +3,14 @@ import math
 import sys
 
 
-sys.setrecursionlimit(10000)
 
 FLAG_NUMBERS = [0, 1, 123, 0x7F4B81BE, 0xDB3BE6B0, 0xFFFFFFFF]
 
 
 class Decryptor():
     def __init__(self):
-        self.p = process("./src/crypto_homework_2")
+        # self.p = process("./src/crypto_homework_2")
+        self.p = remote('p4.team', 8403)
         self.p.recvuntil("Ready!")
 
         self.p.send("0<1\n")
@@ -34,6 +34,8 @@ class Decryptor():
             0: enc_zero,
             1: enc_one,
         }
+        print(self.encodings)
+
 
     def prepare_encodings(self):
         for n in [2 ** i for i in range(1,33)]:
@@ -41,6 +43,7 @@ class Decryptor():
             n2e = self.encodings[n2]
             self.p.send("{}+{}\n".format(n2e, n2e))
             self.encodings[n] = int(self.p.recvline())
+
 
     def encrypt_number(self, num):
         if num in self.encodings:
@@ -62,42 +65,55 @@ class Decryptor():
                     enq.append((fst, s-fst))
             return self.encodings[num]
 
-    def prepare_numbers_for_first_flag(self):
-        for num in FLAG_NUMBERS:
-            self.encrypt_number(num)
 
-    def finish(self):
+    def decrypt_number(self, num):
+        zero = self.encodings[0]
+        one = self.encodings[1]
+        def bin_search(start, end):
+            if start == end:
+                return start
+            middle = (start + end) / 2
+            m = self.encrypt_number(middle)
+            self.p.send("{}<{}\n".format(m, num))
+            r = int(self.p.recvline())
+            if r == one:
+                return bin_search(middle + 1, end)
+            else:
+                return bin_search(start, middle)
+        
+        return bin_search(0, 0xFFFFFFFF)
+        
+        
+    def prepare_numbers_for_first_flag(self):
+        self.answers = {}
+        for num in FLAG_NUMBERS:
+            n = self.decrypt_number(num)
+            self.answers[num] = n
+
+
+    def get_easy_flag(self):
         self.p.send("0>0\n")
 
-        count = self.p.recvline()
-        print(count)
-        a = self.p.recvline()
-        print(a)
+        line = self.p.recvline()
+        print(line)
+        line = self.p.recvline()
+        print(line)
 
         for i in FLAG_NUMBERS:
-            a = self.p.recvuntil(" == ")
-            print(a)
-            print("Number: {} -> {}".format(i, self.encodings[i]))
-            ans = "{}\n".format(self.encodings[i])
+            self.p.recvuntil(" == ")
+            print("{} <- {}".format(i, self.answers[i]))
+            ans = "{}\n".format(self.answers[i])
             self.p.send(ans)
-            s = self.p.recvall()
-            print(s)
         
-        res = self.p.recvall()
+        res = self.p.recvuntil("keys:")
         print(res)
 
 
 def solve():
     d = Decryptor()
-
-    # print(d.encodings)
     d.prepare_encodings()
-    # print(d.encodings)
-
     d.prepare_numbers_for_first_flag()
-    # print(d.encodings)
-
-    d.finish()
+    d.get_easy_flag()
 
 
 if __name__ == '__main__':
