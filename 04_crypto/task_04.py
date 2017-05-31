@@ -1,7 +1,5 @@
 from pwn import *
 import math
-import sys
-
 
 
 FLAG_NUMBERS = [0, 1, 123, 0x7F4B81BE, 0xDB3BE6B0, 0xFFFFFFFF]
@@ -9,8 +7,8 @@ FLAG_NUMBERS = [0, 1, 123, 0x7F4B81BE, 0xDB3BE6B0, 0xFFFFFFFF]
 
 class Decryptor():
     def __init__(self):
-        # self.p = process("./src/crypto_homework_2")
-        self.p = remote('p4.team', 8403)
+        self.p = process("./src/crypto_homework_2")
+        # self.p = remote('p4.team', 8403)
         self.p.recvuntil("Ready!")
 
         self.p.send("0<1\n")

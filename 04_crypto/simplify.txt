@@ -1,0 +1,16 @@
+// Encrypt
+// A = val & ~mask
+// B = mask & ((key[2] * (key[3] ^ A) + key[0] * (key[1] ^ A) + A)
+
+~mask & (key[7] * (key[6] ^ (mask & (val ^ B))) + key[5] * (key[4] ^ (mask & (val ^ B))) + (mask & (val ^ B))) ^ val ^ B;
+
+// K4 = (key[4] ^ (mask & (val ^ B)))
+// K6 = (key[6] ^ (mask & (val ^ B)))
+
+~mask & (key[7] * K6 + key[5] * K4 + (mask & (val ^ B))) ^ val ^ B;
+
+// Decrypt
+// C = val & mask
+// D = key[7] * (key[6] ^ C) + key[5] * (key[4] ^ C) + C
+
+val ^ (D & ~mask) ^ ((key[2] * (key[3] ^ ((val ^ D) & ~mask)) + key[0] * (key[1] ^ ((val ^ D) & ~mask)) + ((val ^ D) & ~mask)) & mask);
