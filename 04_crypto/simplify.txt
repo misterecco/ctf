@@ -4,6 +4,28 @@
 
 ~mask & (key[7] * (key[6] ^ (mask & (val ^ B))) + key[5] * (key[4] ^ (mask & (val ^ B))) + (mask & (val ^ B))) ^ val ^ B;
 
+A - zapalone bity z ~mask (wyłącznie)
+B - zapalone bity z mask  (wyłącznie)
+W - wapalone bity z ~mask (wyłącznie)
+val ^ B - 
+
+co będzie jesli val to podzbiór bitów maski?
+A = 0
+B = mask & (key[2] * key[3] + key[0] * key[1])
+val ^ B - mniejszy podzbiór maski 
+W ^ val ^ B - zapala bity nie z maski
+
+co jeśli val nie ma wspólnych bitów z maską?
+A = val
+B - jakiś podzbiór maski
+val ^ B - jakiś podzbiór val
+W ^ val ^ B - 
+
+val   0b00001111
+mask  0b10101010
+~mask 0b01010101
+vanm  0b00000101
+
 // K4 = (key[4] ^ (mask & (val ^ B)))
 // K6 = (key[6] ^ (mask & (val ^ B)))
 

@@ -15,3 +15,14 @@ unhex enhex
 ## ASLR
 
 echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+
+## gdb
+
+b
+stack
+c
+memsearch
+p
+x/s <addr>
+
+strings -t x <binarka>
