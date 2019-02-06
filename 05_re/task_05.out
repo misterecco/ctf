@@ -1,0 +1,928 @@
+magic 03f30d0a
+moddate 61004859 (Mon Jun 19 18:48:33 2017)
+code
+   argcount 0
+   nlocals 0
+   stacksize 15
+   flags 0040
+   code
+      090909096400000909090964010009090909090909096c00000909090909
+      0909095a0000090909096400000909090909090909640100090909090909
+      09096c0100090909095a0100090909090909090909640200090909098400
+      00090909095a020009090909090909096403000909090984000009090909
+      5a0300090909096404000909090984000009090909090909095a04000909
+      090964050009090909840000090909095a05000909090965050009090909
+      09090909096a060009090909090909095a07000909090909090909096500
+      0009090909090909096a080009090909650700090909096a090009090909
+      65070009090909090909096a0a0009090909090909096507000909090909
+      090909096a0b000909090909090909650700090909096a0c000909090909
+      09090965020009090909090909090965070009090909090909096a0d0009
+      090909090909090964060009090909640700090909090909090909140909
+      0909830200090909096507000909090909090909096a0e00090909096507
+      000909090909090909096a0f0009090909650700090909096a1000090909
+      090909090909650700090909096a11000909090909090909650700090909
+      096a120009090909650700090909096a130009090909650700090909096a
+      1400090909090909090909650700090909096a1500090909096507000909
+      09096a160009090909830e00090909095a17000909090909090909096517
+      000909090964010009090909040909090955090909096401000909090953
+  1           0 NOP                 
+              1 NOP                 
+              2 NOP                 
+              3 NOP                 
+              4 LOAD_CONST               0 (-1)
+              7 NOP                 
+              8 NOP                 
+              9 NOP                 
+             10 NOP                 
+             11 LOAD_CONST               1 (None)
+             14 NOP                 
+             15 NOP                 
+             16 NOP                 
+             17 NOP                 
+             18 NOP                 
+             19 NOP                 
+             20 NOP                 
+             21 NOP                 
+             22 IMPORT_NAME              0 (types)
+             25 NOP                 
+             26 NOP                 
+             27 NOP                 
+             28 NOP                 
+             29 NOP                 
+             30 NOP                 
+             31 NOP                 
+             32 NOP                 
+
+  7          33 STORE_NAME               0 (types)
+             36 NOP                 
+             37 NOP                 
+             38 NOP                 
+             39 NOP                 
+             40 LOAD_CONST               0 (-1)
+             43 NOP                 
+             44 NOP                 
+             45 NOP                 
+             46 NOP                 
+             47 NOP                 
+             48 NOP                 
+             49 NOP                 
+             50 NOP                 
+
+ 14          51 LOAD_CONST               1 (None)
+             54 NOP                 
+             55 NOP                 
+             56 NOP                 
+             57 NOP                 
+             58 NOP                 
+             59 NOP                 
+
+ 21          60 NOP                 
+             61 NOP                 
+             62 IMPORT_NAME              1 (dis)
+             65 NOP                 
+             66 NOP                 
+             67 NOP                 
+             68 NOP                 
+
+ 22          69 STORE_NAME               1 (dis)
+             72 NOP                 
+             73 NOP                 
+             74 NOP                 
+             75 NOP                 
+             76 NOP                 
+             77 NOP                 
+             78 NOP                 
+             79 NOP                 
+             80 NOP                 
+             81 LOAD_CONST               2 (<code object foo at 0x7f1928b4a3b0, file "hack.py", line 4>)
+             84 NOP                 
+             85 NOP                 
+             86 NOP                 
+             87 NOP                 
+             88 MAKE_FUNCTION            0
+             91 NOP                 
+             92 NOP                 
+             93 NOP                 
+             94 NOP                 
+             95 STORE_NAME               2 (foo)
+             98 NOP                 
+
+ 23          99 NOP                 
+            100 NOP                 
+            101 NOP                 
+            102 NOP                 
+            103 NOP                 
+            104 NOP                 
+            105 NOP                 
+            106 LOAD_CONST               3 (<code object bar at 0x7f1928b4a130, file "hack.py", line 7>)
+            109 NOP                 
+            110 NOP                 
+            111 NOP                 
+            112 NOP                 
+            113 MAKE_FUNCTION            0
+            116 NOP                 
+            117 NOP                 
+
+ 24         118 NOP                 
+            119 NOP                 
+            120 STORE_NAME               3 (bar)
+            123 NOP                 
+
+ 25         124 NOP                 
+            125 NOP                 
+            126 NOP                 
+            127 LOAD_CONST               4 (<code object baz at 0x7f1928b4a1b0, file "hack.py", line 10>)
+            130 NOP                 
+            131 NOP                 
+            132 NOP                 
+            133 NOP                 
+            134 MAKE_FUNCTION            0
+            137 NOP                 
+            138 NOP                 
+            139 NOP                 
+            140 NOP                 
+            141 NOP                 
+            142 NOP                 
+            143 NOP                 
+            144 NOP                 
+            145 STORE_NAME               4 (baz)
+
+ 26         148 NOP                 
+            149 NOP                 
+            150 NOP                 
+            151 NOP                 
+            152 LOAD_CONST               5 (<code object main at 0x7f1928b4a230, file "hack.py", line 14>)
+            155 NOP                 
+            156 NOP                 
+            157 NOP                 
+            158 NOP                 
+            159 MAKE_FUNCTION            0
+            162 NOP                 
+            163 NOP                 
+            164 NOP                 
+            165 NOP                 
+            166 STORE_NAME               5 (main)
+            169 NOP                 
+            170 NOP                 
+            171 NOP                 
+            172 NOP                 
+            173 LOAD_NAME                5 (main)
+            176 NOP                 
+            177 NOP                 
+
+ 28         178 NOP                 
+            179 NOP                 
+            180 NOP                 
+            181 NOP                 
+            182 NOP                 
+            183 NOP                 
+            184 NOP                 
+            185 LOAD_ATTR                6 (func_code)
+            188 NOP                 
+            189 NOP                 
+            190 NOP                 
+            191 NOP                 
+            192 NOP                 
+            193 NOP                 
+            194 NOP                 
+            195 NOP                 
+            196 STORE_NAME               7 (fn_code)
+            199 NOP                 
+            200 NOP                 
+            201 NOP                 
+            202 NOP                 
+            203 NOP                 
+            204 NOP                 
+            205 NOP                 
+            206 NOP                 
+            207 NOP                 
+            208 LOAD_NAME                0 (types)
+            211 NOP                 
+            212 NOP                 
+            213 NOP                 
+            214 NOP                 
+            215 NOP                 
+            216 NOP                 
+            217 NOP                 
+            218 NOP                 
+            219 LOAD_ATTR                8 (CodeType)
+            222 NOP                 
+            223 NOP                 
+            224 NOP                 
+            225 NOP                 
+            226 LOAD_NAME                7 (fn_code)
+            229 NOP                 
+            230 NOP                 
+            231 NOP                 
+            232 NOP                 
+            233 LOAD_ATTR                9 (co_argcount)
+            236 NOP                 
+            237 NOP                 
+            238 NOP                 
+            239 NOP                 
+            240 LOAD_NAME                7 (fn_code)
+            243 NOP                 
+            244 NOP                 
+            245 NOP                 
+            246 NOP                 
+            247 NOP                 
+            248 NOP                 
+            249 NOP                 
+            250 NOP                 
+            251 LOAD_ATTR               10 (co_nlocals)
+            254 NOP                 
+            255 NOP                 
+            256 NOP                 
+            257 NOP                 
+            258 NOP                 
+            259 NOP                 
+            260 NOP                 
+            261 NOP                 
+            262 LOAD_NAME                7 (fn_code)
+            265 NOP                 
+            266 NOP                 
+            267 NOP                 
+            268 NOP                 
+            269 NOP                 
+            270 NOP                 
+            271 NOP                 
+            272 NOP                 
+            273 NOP                 
+            274 LOAD_ATTR               11 (co_stacksize)
+            277 NOP                 
+            278 NOP                 
+            279 NOP                 
+            280 NOP                 
+            281 NOP                 
+            282 NOP                 
+            283 NOP                 
+            284 NOP                 
+            285 LOAD_NAME                7 (fn_code)
+            288 NOP                 
+            289 NOP                 
+            290 NOP                 
+            291 NOP                 
+            292 LOAD_ATTR               12 (co_flags)
+            295 NOP                 
+            296 NOP                 
+            297 NOP                 
+            298 NOP                 
+            299 NOP                 
+            300 NOP                 
+            301 NOP                 
+            302 NOP                 
+            303 LOAD_NAME                2 (foo)
+            306 NOP                 
+            307 NOP                 
+            308 NOP                 
+            309 NOP                 
+            310 NOP                 
+            311 NOP                 
+            312 NOP                 
+            313 NOP                 
+            314 NOP                 
+            315 LOAD_NAME                7 (fn_code)
+            318 NOP                 
+            319 NOP                 
+            320 NOP                 
+            321 NOP                 
+            322 NOP                 
+            323 NOP                 
+            324 NOP                 
+            325 NOP                 
+            326 LOAD_ATTR               13 (co_code)
+            329 NOP                 
+            330 NOP                 
+            331 NOP                 
+            332 NOP                 
+            333 NOP                 
+            334 NOP                 
+            335 NOP                 
+            336 NOP                 
+            337 NOP                 
+            338 LOAD_CONST               6 ('X')
+            341 NOP                 
+            342 NOP                 
+            343 NOP                 
+            344 NOP                 
+            345 LOAD_CONST               7 (10000)
+            348 NOP                 
+            349 NOP                 
+            350 NOP                 
+            351 NOP                 
+            352 NOP                 
+            353 NOP                 
+            354 NOP                 
+            355 NOP                 
+            356 NOP                 
+            357 BINARY_MULTIPLY     
+            358 NOP                 
+            359 NOP                 
+            360 NOP                 
+            361 NOP                 
+            362 CALL_FUNCTION            2
+            365 NOP                 
+            366 NOP                 
+            367 NOP                 
+            368 NOP                 
+            369 LOAD_NAME                7 (fn_code)
+            372 NOP                 
+            373 NOP                 
+            374 NOP                 
+            375 NOP                 
+            376 NOP                 
+            377 NOP                 
+            378 NOP                 
+            379 NOP                 
+            380 NOP                 
+            381 LOAD_ATTR               14 (co_consts)
+            384 NOP                 
+            385 NOP                 
+            386 NOP                 
+            387 NOP                 
+            388 LOAD_NAME                7 (fn_code)
+            391 NOP                 
+            392 NOP                 
+            393 NOP                 
+            394 NOP                 
+            395 NOP                 
+            396 NOP                 
+            397 NOP                 
+            398 NOP                 
+            399 NOP                 
+            400 LOAD_ATTR               15 (co_names)
+            403 NOP                 
+            404 NOP                 
+            405 NOP                 
+            406 NOP                 
+            407 LOAD_NAME                7 (fn_code)
+            410 NOP                 
+            411 NOP                 
+            412 NOP                 
+            413 NOP                 
+            414 LOAD_ATTR               16 (co_varnames)
+            417 NOP                 
+            418 NOP                 
+            419 NOP                 
+            420 NOP                 
+            421 NOP                 
+            422 NOP                 
+            423 NOP                 
+            424 NOP                 
+            425 NOP                 
+            426 LOAD_NAME                7 (fn_code)
+            429 NOP                 
+            430 NOP                 
+            431 NOP                 
+            432 NOP                 
+            433 LOAD_ATTR               17 (co_filename)
+            436 NOP                 
+            437 NOP                 
+            438 NOP                 
+            439 NOP                 
+            440 NOP                 
+            441 NOP                 
+            442 NOP                 
+            443 NOP                 
+            444 LOAD_NAME                7 (fn_code)
+            447 NOP                 
+            448 NOP                 
+            449 NOP                 
+            450 NOP                 
+            451 LOAD_ATTR               18 (co_name)
+            454 NOP                 
+            455 NOP                 
+            456 NOP                 
+            457 NOP                 
+            458 LOAD_NAME                7 (fn_code)
+            461 NOP                 
+            462 NOP                 
+            463 NOP                 
+            464 NOP                 
+            465 LOAD_ATTR               19 (co_firstlineno)
+            468 NOP                 
+            469 NOP                 
+            470 NOP                 
+            471 NOP                 
+            472 LOAD_NAME                7 (fn_code)
+            475 NOP                 
+            476 NOP                 
+            477 NOP                 
+            478 NOP                 
+            479 LOAD_ATTR               20 (co_lnotab)
+            482 NOP                 
+            483 NOP                 
+            484 NOP                 
+            485 NOP                 
+            486 NOP                 
+            487 NOP                 
+            488 NOP                 
+            489 NOP                 
+            490 NOP                 
+            491 LOAD_NAME                7 (fn_code)
+            494 NOP                 
+            495 NOP                 
+            496 NOP                 
+            497 NOP                 
+            498 LOAD_ATTR               21 (co_freevars)
+            501 NOP                 
+            502 NOP                 
+            503 NOP                 
+            504 NOP                 
+            505 LOAD_NAME                7 (fn_code)
+            508 NOP                 
+            509 NOP                 
+            510 NOP                 
+            511 NOP                 
+            512 LOAD_ATTR               22 (co_cellvars)
+            515 NOP                 
+            516 NOP                 
+            517 NOP                 
+            518 NOP                 
+            519 CALL_FUNCTION           14
+            522 NOP                 
+            523 NOP                 
+            524 NOP                 
+            525 NOP                 
+            526 STORE_NAME              23 (code)
+            529 NOP                 
+            530 NOP                 
+            531 NOP                 
+            532 NOP                 
+            533 NOP                 
+            534 NOP                 
+            535 NOP                 
+            536 NOP                 
+            537 NOP                 
+            538 LOAD_NAME               23 (code)
+            541 NOP                 
+            542 NOP                 
+            543 NOP                 
+            544 NOP                 
+            545 LOAD_CONST               1 (None)
+            548 NOP                 
+            549 NOP                 
+            550 NOP                 
+            551 NOP                 
+            552 DUP_TOP             
+            553 NOP                 
+            554 NOP                 
+            555 NOP                 
+            556 NOP                 
+            557 EXEC_STMT           
+            558 NOP                 
+            559 NOP                 
+            560 NOP                 
+            561 NOP                 
+            562 LOAD_CONST               1 (None)
+            565 NOP                 
+            566 NOP                 
+            567 NOP                 
+            568 NOP                 
+            569 RETURN_VALUE        
+   consts
+      -1
+      None
+      code
+         argcount 2
+         nlocals 2
+         stacksize 5
+         flags 0043
+         code
+            0909090909090909640100090909096a0000090909090909090964020009
+            09090909090909840000090909090909090909740100090909097c000009
+            09090909090909097c010009090909830200090909090909090909440909
+            090909090909830100090909098301000909090953
+  5           0 NOP                 
+              1 NOP                 
+              2 NOP                 
+              3 NOP                 
+              4 NOP                 
+              5 NOP                 
+              6 NOP                 
+              7 NOP                 
+              8 LOAD_CONST               1 ('')
+             11 NOP                 
+             12 NOP                 
+             13 NOP                 
+             14 NOP                 
+             15 LOAD_ATTR                0 (join)
+             18 NOP                 
+             19 NOP                 
+             20 NOP                 
+             21 NOP                 
+             22 NOP                 
+             23 NOP                 
+             24 NOP                 
+             25 NOP                 
+             26 LOAD_CONST               2 (<code object <genexpr> at 0x7f1928ba5e30, file "hack.py", line 5>)
+             29 NOP                 
+             30 NOP                 
+             31 NOP                 
+             32 NOP                 
+             33 NOP                 
+             34 NOP                 
+             35 NOP                 
+             36 NOP                 
+             37 MAKE_FUNCTION            0
+             40 NOP                 
+             41 NOP                 
+             42 NOP                 
+             43 NOP                 
+             44 NOP                 
+             45 NOP                 
+             46 NOP                 
+             47 NOP                 
+             48 NOP                 
+             49 LOAD_GLOBAL              1 (zip)
+             52 NOP                 
+             53 NOP                 
+             54 NOP                 
+             55 NOP                 
+             56 LOAD_FAST                0 (a)
+             59 NOP                 
+             60 NOP                 
+             61 NOP                 
+             62 NOP                 
+             63 NOP                 
+             64 NOP                 
+             65 NOP                 
+             66 NOP                 
+             67 NOP                 
+             68 LOAD_FAST                1 (b)
+             71 NOP                 
+             72 NOP                 
+             73 NOP                 
+             74 NOP                 
+             75 CALL_FUNCTION            2
+             78 NOP                 
+             79 NOP                 
+             80 NOP                 
+             81 NOP                 
+             82 NOP                 
+             83 NOP                 
+             84 NOP                 
+             85 NOP                 
+             86 NOP                 
+             87 GET_ITER            
+             88 NOP                 
+             89 NOP                 
+             90 NOP                 
+             91 NOP                 
+             92 NOP                 
+             93 NOP                 
+             94 NOP                 
+             95 NOP                 
+             96 CALL_FUNCTION            1
+             99 NOP                 
+            100 NOP                 
+            101 NOP                 
+            102 NOP                 
+            103 CALL_FUNCTION            1
+            106 NOP                 
+            107 NOP                 
+            108 NOP                 
+            109 NOP                 
+            110 RETURN_VALUE        
+         consts
+            None
+            ''
+            code
+               argcount 1
+               nlocals 3
+               stacksize 5
+               flags 0073
+               code
+                  7c00005d27005c02007d01007d02007400007401007c0100830100740100
+                  7c020083010041830100560171030064000053
+  5           0 LOAD_FAST                0 (.0)
+        >>    3 FOR_ITER                39 (to 45)
+              6 UNPACK_SEQUENCE          2
+              9 STORE_FAST               1 (ac)
+             12 STORE_FAST               2 (bc)
+             15 LOAD_GLOBAL              0 (chr)
+             18 LOAD_GLOBAL              1 (ord)
+             21 LOAD_FAST                1 (ac)
+             24 CALL_FUNCTION            1
+             27 LOAD_GLOBAL              1 (ord)
+             30 LOAD_FAST                2 (bc)
+             33 CALL_FUNCTION            1
+             36 BINARY_XOR          
+             37 CALL_FUNCTION            1
+             40 YIELD_VALUE         
+             41 POP_TOP             
+             42 JUMP_ABSOLUTE            3
+        >>   45 LOAD_CONST               0 (None)
+             48 RETURN_VALUE        
+               consts
+                  None
+               names ('chr', 'ord')
+               varnames ('.0', 'ac', 'bc')
+               freevars ()
+               cellvars ()
+               filename 'hack.py'
+               name '<genexpr>'
+               firstlineno 5
+               lnotab 0600
+         names ('join', 'zip')
+         varnames ('a', 'b')
+         freevars ()
+         cellvars ()
+         filename 'hack.py'
+         name 'foo'
+         firstlineno 4
+         lnotab 0001
+      code
+         argcount 2
+         nlocals 2
+         stacksize 5
+         flags 0043
+         code
+            0909090909090909640100090909096a0000090909096402000909090909
+            0909098400000909090909090909097401000909090909090909097c0000
+            090909097c01000909090983020009090909090909090944090909098301
+            0009090909090909098301000909090953
+  8           0 NOP                 
+              1 NOP                 
+              2 NOP                 
+              3 NOP                 
+              4 NOP                 
+              5 NOP                 
+              6 NOP                 
+              7 NOP                 
+              8 LOAD_CONST               1 ('')
+             11 NOP                 
+             12 NOP                 
+             13 NOP                 
+             14 NOP                 
+             15 LOAD_ATTR                0 (join)
+             18 NOP                 
+             19 NOP                 
+             20 NOP                 
+             21 NOP                 
+             22 LOAD_CONST               2 (<code object <genexpr> at 0x7f1928b4a030, file "hack.py", line 8>)
+             25 NOP                 
+             26 NOP                 
+             27 NOP                 
+             28 NOP                 
+             29 NOP                 
+             30 NOP                 
+             31 NOP                 
+             32 NOP                 
+             33 MAKE_FUNCTION            0
+             36 NOP                 
+             37 NOP                 
+             38 NOP                 
+             39 NOP                 
+             40 NOP                 
+             41 NOP                 
+             42 NOP                 
+             43 NOP                 
+             44 NOP                 
+             45 LOAD_GLOBAL              1 (zip)
+             48 NOP                 
+             49 NOP                 
+             50 NOP                 
+             51 NOP                 
+             52 NOP                 
+             53 NOP                 
+             54 NOP                 
+             55 NOP                 
+             56 NOP                 
+             57 LOAD_FAST                0 (a)
+             60 NOP                 
+             61 NOP                 
+             62 NOP                 
+             63 NOP                 
+             64 LOAD_FAST                1 (b)
+             67 NOP                 
+             68 NOP                 
+             69 NOP                 
+             70 NOP                 
+             71 CALL_FUNCTION            2
+             74 NOP                 
+             75 NOP                 
+             76 NOP                 
+             77 NOP                 
+             78 NOP                 
+             79 NOP                 
+             80 NOP                 
+             81 NOP                 
+             82 NOP                 
+             83 GET_ITER            
+             84 NOP                 
+             85 NOP                 
+             86 NOP                 
+             87 NOP                 
+             88 CALL_FUNCTION            1
+             91 NOP                 
+             92 NOP                 
+             93 NOP                 
+             94 NOP                 
+             95 NOP                 
+             96 NOP                 
+             97 NOP                 
+             98 NOP                 
+             99 CALL_FUNCTION            1
+            102 NOP                 
+            103 NOP                 
+            104 NOP                 
+            105 NOP                 
+            106 RETURN_VALUE        
+         consts
+            None
+            ''
+            code
+               argcount 1
+               nlocals 3
+               stacksize 5
+               flags 0073
+               code
+                  7c00005d2b005c02007d01007d02007400007401007c0100830100740100
+                  7c02008301001764000016830100560171030064010053
+  8           0 LOAD_FAST                0 (.0)
+        >>    3 FOR_ITER                43 (to 49)
+              6 UNPACK_SEQUENCE          2
+              9 STORE_FAST               1 (ac)
+             12 STORE_FAST               2 (bc)
+             15 LOAD_GLOBAL              0 (chr)
+             18 LOAD_GLOBAL              1 (ord)
+             21 LOAD_FAST                1 (ac)
+             24 CALL_FUNCTION            1
+             27 LOAD_GLOBAL              1 (ord)
+             30 LOAD_FAST                2 (bc)
+             33 CALL_FUNCTION            1
+             36 BINARY_ADD          
+             37 LOAD_CONST               0 (256)
+             40 BINARY_MODULO       
+             41 CALL_FUNCTION            1
+             44 YIELD_VALUE         
+             45 POP_TOP             
+             46 JUMP_ABSOLUTE            3
+        >>   49 LOAD_CONST               1 (None)
+             52 RETURN_VALUE        
+               consts
+                  256
+                  None
+               names ('chr', 'ord')
+               varnames ('.0', 'ac', 'bc')
+               freevars ()
+               cellvars ()
+               filename 'hack.py'
+               name '<genexpr>'
+               firstlineno 8
+               lnotab 0600
+         names ('join', 'zip')
+         varnames ('a', 'b')
+         freevars ()
+         cellvars ()
+         filename 'hack.py'
+         name 'bar'
+         firstlineno 7
+         lnotab 0001
+      code
+         argcount 1
+         nlocals 2
+         stacksize 5
+         flags 0043
+         code
+            0909090964010009090909640200090909091409090909090909097d0100
+            090909097400000909090909090909097401000909090909090909097400
+            00090909097c0000090909097c010009090909830200090909097c010009
+            0909090909090983020009090909090909097c0100090909090909090909
+            830200090909090909090953
+ 11           0 NOP                 
+              1 NOP                 
+              2 NOP                 
+              3 NOP                 
+              4 LOAD_CONST               1 ('secret')
+              7 NOP                 
+              8 NOP                 
+              9 NOP                 
+
+ 12          10 NOP                 
+             11 LOAD_CONST               2 (100)
+             14 NOP                 
+             15 NOP                 
+             16 NOP                 
+             17 NOP                 
+             18 BINARY_MULTIPLY     
+             19 NOP                 
+             20 NOP                 
+             21 NOP                 
+             22 NOP                 
+             23 NOP                 
+             24 NOP                 
+             25 NOP                 
+             26 NOP                 
+             27 STORE_FAST               1 (K)
+             30 NOP                 
+             31 NOP                 
+             32 NOP                 
+             33 NOP                 
+             34 LOAD_GLOBAL              0 (bar)
+             37 NOP                 
+             38 NOP                 
+             39 NOP                 
+             40 NOP                 
+             41 NOP                 
+             42 NOP                 
+             43 NOP                 
+             44 NOP                 
+             45 NOP                 
+             46 LOAD_GLOBAL              1 (foo)
+             49 NOP                 
+             50 NOP                 
+             51 NOP                 
+             52 NOP                 
+             53 NOP                 
+             54 NOP                 
+             55 NOP                 
+             56 NOP                 
+             57 NOP                 
+             58 LOAD_GLOBAL              0 (bar)
+             61 NOP                 
+             62 NOP                 
+             63 NOP                 
+             64 NOP                 
+             65 LOAD_FAST                0 (a)
+             68 NOP                 
+             69 NOP                 
+             70 NOP                 
+             71 NOP                 
+             72 LOAD_FAST                1 (K)
+             75 NOP                 
+             76 NOP                 
+             77 NOP                 
+             78 NOP                 
+             79 CALL_FUNCTION            2
+             82 NOP                 
+             83 NOP                 
+             84 NOP                 
+             85 NOP                 
+             86 LOAD_FAST                1 (K)
+             89 NOP                 
+             90 NOP                 
+             91 NOP                 
+             92 NOP                 
+             93 NOP                 
+             94 NOP                 
+             95 NOP                 
+             96 NOP                 
+             97 CALL_FUNCTION            2
+            100 NOP                 
+            101 NOP                 
+            102 NOP                 
+            103 NOP                 
+            104 NOP                 
+            105 NOP                 
+            106 NOP                 
+            107 NOP                 
+            108 LOAD_FAST                1 (K)
+            111 NOP                 
+            112 NOP                 
+            113 NOP                 
+            114 NOP                 
+            115 NOP                 
+            116 NOP                 
+            117 NOP                 
+            118 NOP                 
+            119 NOP                 
+            120 CALL_FUNCTION            2
+            123 NOP                 
+            124 NOP                 
+            125 NOP                 
+            126 NOP                 
+            127 NOP                 
+            128 NOP                 
+            129 NOP                 
+            130 NOP                 
+            131 RETURN_VALUE        
+         consts
+            None
+            'secret'
+            100
+         names ('bar', 'foo')
+         varnames ('a', 'K')
+         freevars ()
+         cellvars ()
+         filename 'hack.py'
+         name 'baz'
+         firstlineno 10
+         lnotab 00010a01
+      code
+         argcount 0
+         nlocals 1
+         stacksize 3
+         flags 0043
+         code
+            365a583659365958362c5858365a583659365958363c5958515151515151
+            5151db59585151515125585851515151515151512c595851515151245858
+            51515151db595851515151515151513c5a5851515151325a585151515151
+            5151513c5b583659582fdb59585151515151515151335a583659582f2ae0
+            5851515151515151512c5b585151515151515151245858365a5836593659
+            58363c5c5836595836db5a58365958361f5151515110365a583659365958
+            36364958365958363c5d58365958361f3659583610365a58365936595836
+            3c5858365958360b
+ 15           0 STORE_MAP           
+              1 STORE_NAME           13912
